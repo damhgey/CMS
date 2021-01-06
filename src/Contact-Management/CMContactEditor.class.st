@@ -20,10 +20,41 @@ self initialize.
 model := anEvent.
 ]
 
+{ #category : #rendering }
+CMContactEditor >> renderAddressOn: html [
+	| tagID |
+	html div: [
+		html label
+			for: (tagID := html nextId);
+			with: 'Address'.
+		html textInput
+			id: tagID;
+			value: model address   ;
+			callback: [ :value | model address:    value ].
+].
+html break.
+]
+
+{ #category : #rendering }
+CMContactEditor >> renderButtonsOn: html [
+	 
+	html div: [
+		
+				html submitButton
+			callback: [ self answer: true ];
+			with: 'Save'.
+			html space: 4.
+		html cancelButton
+		callback: [ self answer: false ] ;
+	with: 'Cancel'.
+
+	].
+]
+
 { #category : #initialization }
 CMContactEditor >> renderContentOn: html [
 
-html tbsFormGroup: [ 
+"html tbsFormGroup: [ 
 		html label for: 'name'; with: 'Enter Name'.
 		html textInput tbsFormControl; id: 'name'; placeholder: 'Enter Name';value: model name;
 						callback: [ :value | model name: value ].
@@ -58,11 +89,11 @@ html tbsFormGroup: [
 html tbsFormGroup: [ 
 	html anchor
 		class: 'btn btn-default'; 
-	  callback: [ self answer: true ];
+	  callback: [ self answer: true];
 						with: 'Save'.
 						html space: 5.
-	html tbsSubmitButton beDefault callback: [ self answer: false ];
-					with: 'Cancel'.	 ]	.	
+	html tbsSubmitButton beDefault callback: [self answer: false ];
+					with: 'Cancel'.	 ]	."	
 
 
 					
@@ -79,11 +110,12 @@ html tbsFormGroup: [
 				html tableRow: [
 					html tableHeading: 'Name:'.
 						html tableData: [
-						html textInput
+						html textInput 
 						value: model name;
 						callback: [:value | model name: value].
 					].
 			].
+		
 					html tableRow: [
 						html tableHeading: 'Email'.
 						html tableData: [
@@ -152,4 +184,110 @@ html tbsFormGroup: [
 		].
 	].
 ]."
+
+
+html div 
+		id:'form';
+		with:[
+	html form
+		class: 'editor';
+			with: [
+				self  renderNameOn: html;
+				
+						renderEmailOn: html;
+					
+						 renderPhoneOn: html;
+						
+						renderAddressOn: html;
+					
+						renderPositionOn: html;
+				
+						renderNoteOn: html;
+						
+					 renderButtonsOn: html;
+					
+					yourself .
+				
+].
+]
+]
+
+{ #category : #rendering }
+CMContactEditor >> renderEmailOn: html [
+	| tagID |
+	html div: [
+		html label
+			for: (tagID := html nextId);
+			with: 'Email'.
+		html textInput
+			id: tagID;
+			value: model email ;
+			callback: [ :value | model email:  value ].
+].
+html break.
+]
+
+{ #category : #rendering }
+CMContactEditor >> renderNameOn: html [
+	| tagID |
+	html div: [
+		html label
+			for: (tagID := html nextId);
+			with: 'Name'.
+		html textInput
+			id: tagID;
+			value: model name ;
+			callback: [:value | model name:  value].
+].
+html break.
+]
+
+{ #category : #rendering }
+CMContactEditor >> renderNoteOn: html [
+	| tagID |
+	html div: [
+		html label
+			for: (tagID := html nextId);
+			with: 'Note'.
+		html textInput
+			id: tagID;
+			value: model note     ;
+			callback: [ :value | model note:     value ].
+].
+html break.
+]
+
+{ #category : #rendering }
+CMContactEditor >> renderPhoneOn: html [
+	| tagID |
+	html div: [
+		html label
+			for: (tagID := html nextId);
+			with: 'Phone'.
+		html textInput
+			id: tagID;
+			value: model phone  ;
+			callback: [ :value | model phone:   value ].
+].
+html break.
+]
+
+{ #category : #rendering }
+CMContactEditor >> renderPositionOn: html [
+	
+
+	| tagID |
+			html div: [
+				html label 
+					for: (tagID := html nextId);
+					with: 'Jop Position'.
+						html select
+							id: tagID;
+								selected: model jopPosition ;
+									list: model jopPositionList ;
+								callback: [:value | model jopPosition: value].
+								
+				].
+			html break.
+
 ]

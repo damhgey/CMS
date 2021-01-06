@@ -130,13 +130,15 @@ CMMain >> renderLoginAnchorOn: html [
 
 		html tbsNavbarButton 
 				tbsPullRight 					
-					with:[ 
+					with: [  
 						html anchor	
-						callback: [mainArea := CMLoginComponent new];
-						with: 'LogIn'. 
+						callback: [ mainArea := CMLoginComponent new ];
+						with: [html strong with:'LogIn']. 
 						html space: 1.
-						html tbsGlyphIcon iconLogin .]
+						html tbsGlyphIcon iconLogin . ].
 					
+			
+
 ]
 
 { #category : #rendering }

@@ -38,12 +38,12 @@ LBFileLibrary >> mainCss [
 	font-size: 17px;font-weight: bold
 }
 	#hrline{
-	 margin-right: 43%;
+	 margin-right: 49%;
 	border-bottom:5px solid grey
 }
 	#table{
 	text-align:center;
-	word-spacing: 1px;
+	word-spacing: 1px;	
 	
 	}
 	#footer {
@@ -70,6 +70,18 @@ form div.hidden { display: none; }
 	text-align:center;
 	margin-left: 400px;
 	margin-top: 120px}
+	
+	.editor { display: table; }
+	.editor > div { display: table-row; }
+	.editor > div > * { display: table-cell; }
+	
+	#form {
+			margin-top:9%;
+			 margin-left: 37% ;
+			width:445px;
+	}
+	
+	
 '
 ]
 

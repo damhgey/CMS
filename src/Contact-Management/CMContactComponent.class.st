@@ -17,15 +17,15 @@ CMContactComponent >> actionReportColumn [
 	^ WAReportColumn new
 		title: 'Action';
 			valueBlock: [ :each :html |
-				html anchor
+		self session user notNil ifTrue:[ html anchor
 				callback: [ self edit: each ];
-				with: 'Edit'.
+				with: 'Edit' ].
 	html space .
-			html anchor
+		self session user notNil ifTrue: [  html anchor
 			callback: [ self delete:  each ];
-			with: 'delete'.
+			with: 'delete' ]. 
 	] ;
-yourself.
+yourself. 
 ]
 
 { #category : #rendering }

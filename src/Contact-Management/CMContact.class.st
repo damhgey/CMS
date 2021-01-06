@@ -84,12 +84,12 @@ CMContact >> email: anObject [
 CMContact >> initialize [ 
 
 	super initialize .
-	name :='Ahmed  '.
+	name :='Ahmed '.
 	email :='ahmed@gmail.com'.
-	phone := 01215686548 asInteger.
+	phone := 01215686548 asNumber .
 	address := 'Cairo-Egypt'.
 	jopPosition := self jopPositionList first.
-	note := 'New  '
+	note := ''
 ]
 
 { #category : #accessing }
@@ -129,10 +129,10 @@ CMContact >> note: anObject [
 
 { #category : #accessing }
 CMContact >> phone [
-	^ phone
+	^ phone asNumber 
 ]
 
 { #category : #accessing }
-CMContact >> phone: anObject [
-	phone := anObject
+CMContact >> phone: anObject [ 
+	phone := anObject  asNumber 
 ]
