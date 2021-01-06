@@ -14,8 +14,7 @@ BaselineOfContactManagement >> baseline: spec [
 					spec baseline: 'PharoWeb' with: [ spec repository: 'github://LucFabresse/PharoWeb/src' ].
 					spec package: 'TinyBlog' with: [ spec requires: #('PharoWeb') ].
 					spec package: 'TinyBlog-Tests' with: [ spec requires: #('TinyBlog') ].
-					spec group: 'default' with: #( 'TinyBlog' 'TinyBlog-Tests' ).
-					
+						
 					spec
 					package: 'Contact-Management';
 					package: 'Contact-Management-Tests' with: [ spec requires: #('Contact-Management') ].
