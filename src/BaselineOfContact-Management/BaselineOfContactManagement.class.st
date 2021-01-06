@@ -12,7 +12,6 @@ BaselineOfContactManagement >> baseline: spec [
 		do: [
 							
 			
-					spec repository:  'github://LucFabresse/TinyBlog/src' .
 					
 				   spec configuration: 'Seaside30' with: [
    					 spec
