@@ -17,6 +17,9 @@ BaselineOfContactManagement >> baseline: spec [
    					 spec
    					  version: #stable;
 			        repository: 'http://www.squeaksource.com/MetacelloRepository' ].
+		spec
+			baseline: 'Bootstrap'
+			with: [ spec repository: 'github://astares/Seaside-Bootstrap:master/src' ].
 		
 					spec
 					package: 'Contact-Management';
