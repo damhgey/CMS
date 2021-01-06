@@ -10,23 +10,26 @@ BaselineOfContactManagement >> baseline: spec [
 	spec
 		for: #common
 		do: [
-							
+					self tiny: spec .		
 			
-					
-				   spec configuration: 'Seaside30' with: [
-   					 spec
-   					  version: #stable;
-			        repository: 'http://www.squeaksource.com/MetacelloRepository' ].
-		spec
-			baseline: 'Bootstrap'
-			with: [ spec repository: 'github://astares/Seaside-Bootstrap:master/src' ].
+		
 		
 					spec
-					package: 'Contact-Management';
-					package: 'Contact-Management-Tests' with: [ spec requires: #('Contact-Management') ].
+						package: 'Contact-Management';
+						package: 'Contact-Management-Tests' with: [ spec requires: #('Contact-Management') ].
 					
 			
 
 		]
 
+]
+
+{ #category : #'as yet unclassified' }
+BaselineOfContactManagement >> tiny: spec [ 
+
+	spec 
+		baseline: 'TinyBlog'
+		with: [ spec repository: 'github://LucFabresse/TinyBlog/src' ]
+
+	
 ]
