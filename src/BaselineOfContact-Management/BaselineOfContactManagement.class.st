@@ -14,10 +14,14 @@ BaselineOfContactManagement >> baseline: spec [
 			
 					spec repository:  'github://LucFabresse/TinyBlog/src' .
 					
-					
+				   spec configuration: 'Seaside30' with: [
+   					 spec
+   					  version: #stable;
+			        repository: 'http://www.squeaksource.com/MetacelloRepository' ].
+		
 					spec
 					package: 'Contact-Management';
-					package: 'Contact-Management-Tests' with: [ spec requires: #('Contact-Management')].
+					package: 'Contact-Management-Tests' with: [ spec requires: #('Contact-Management') ].
 					
 			
 
