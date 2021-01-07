@@ -11,13 +11,13 @@ BaselineOfContactManagement >> baseline: spec [
 		for: #common
 		do: [
 			
-					spec baseline: 'PharoWeb' with: [ spec repository: 'github://LucFabresse/PharoWeb/src' ].
-					spec package: 'TinyBlog' with: [ spec requires: #('PharoWeb') ];
-						  package: 'Contact-Management';
-						  package: 'Contact-Management-Tests' with: [ spec requires: #('Contact-Management') ].
-					
-			
+					spec
+						baseline: 'Seaside3'
+						with: [ spec repository: 'github://SeasideSt/Seaside:v3.4.2/repository' ].
 
+					spec
+					  package: 'Contact-Management';
+					  package: 'Contact-Management-Tests' with: [ spec requires: #('Contact-Management') ].		
 		]
 
 ]
