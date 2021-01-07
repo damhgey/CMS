@@ -10,26 +10,14 @@ BaselineOfContactManagement >> baseline: spec [
 	spec
 		for: #common
 		do: [
-					self tiny: spec .		
 			
-		
-		
-					spec
-						package: 'Contact-Management';
-						package: 'Contact-Management-Tests' with: [ spec requires: #('Contact-Management') ].
+					spec baseline: 'PharoWeb' with: [ spec repository: 'github://LucFabresse/PharoWeb/src' ].
+					spec package: 'TinyBlog' with: [ spec requires: #('PharoWeb') ];
+						  package: 'Contact-Management';
+						  package: 'Contact-Management-Tests' with: [ spec requires: #('Contact-Management') ].
 					
 			
 
 		]
 
-]
-
-{ #category : #'as yet unclassified' }
-BaselineOfContactManagement >> tiny: spec [ 
-
-	spec 
-		baseline: 'TinyBlog'
-		with: [ spec repository: 'github://LucFabresse/TinyBlog/src' ]
-
-	
 ]
